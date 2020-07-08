@@ -29,7 +29,11 @@
 
   -------------------------------------------- */
 
-
+let message = `Ask a question that you wish to ask from deep within your heart, 
+  and be prepared to recieve advice from the great magic 8 ball`;
+  console.log(message);
+  
+  const READLINE = require("readline-sync");
 
 
 
@@ -74,7 +78,10 @@
 
   -------------------------------------------- */
 
+let  responceArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"];
 
+  let randomresponce = responceArray[Math.floor(Math.random() = responceArray.length)];
+  consule.log(randomresponce)
 
 
 
@@ -101,7 +108,16 @@
 	
   -------------------------------------------- */
 
+let message = `Ask a question that you wish to ask from deep within your heart, 
+  and be prepared to recieve advice from the great magic 8 ball`;
+  console.log(message);
+  
+  const READLINE = require("readline-sync");
 
+  let  responceArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"];
+
+  let randomresponce = responceArray[Math.floor(Math.random() = responceArray.length)];
+  consule.log(randomresponce)
 
 
 
