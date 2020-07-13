@@ -35,24 +35,25 @@ console.log("names: " + names)
 // **** Challenge 1 : Part 1 **** 
 // Given an array named food, fill the array with 5 strings.
 
-let food = []
+let food = ["apple,", "eggs", "banana", "ham", "orange"]
 console.log("food: " + food)  
 
 
 // **** Challenge 1 : Part 2 **** 
 // Declare an array named numbers with 5 numbers.
 
-
+let numbers = [2,4,6,8,10]
 console.log("numbers: " + numbers)   
 
 
 // **** Challenge 1 : Part 3 **** 
 // Declare and log two more arrays with anything you want. 
 
+let sports = ["soccer", "basketball", "football", "tennis", "golf"]
+console.log("sports: " + sports)
 
-
-
-
+let stores = ["walmart", "Target", " Macy", "Kohl's", "Sears"]
+console.log("stores: " + stores)
 /* -------------------------------------------- 
 Challenge 2: Accessing Data in Arrays
 -------------------------------------------- */
@@ -66,13 +67,13 @@ console.log("The first name is " + names[0]);
 // **** Challenge 2 : Part 1 **** 
 // Log the name of the person from your food array you spoke to last.
 
-
+console.log(names[4])
 
 
 // **** Challenge 2 : Part 2 **** 
 // Log the first AND last elements of any array you made.
 
-
+console.log(sports[0], stores[4])
 
 
 /* -------------------------------------------- 
@@ -89,7 +90,16 @@ console.log(names)
 // **** Challenge 3 : Part 1 **** 
 // Update all values of your food array with new food items that you're craving.
 
-
+food[0] = "bread"
+console.log(food)
+food[1] = "grapes"
+console.log(food)
+food[2] = "pear"
+console.log(food)
+food[3] = "waffle"
+console.log(food)
+food[4] = "bacon"
+console.log(food)
 
 
 
@@ -106,7 +116,13 @@ function timesTen(number){
 // **** Challenge 3 : Part 2 **** 
 // Write a function that multiplies a number by 1000 and log the array. 
 
+numbers[3] = timesThousand(numbers[3])
+console.log(numbers)
 
+function timesThousand(numbers){
+    timesThousandNumber = numbers * 1000
+    return timesThousandNumber
+}
 
 
 
@@ -128,7 +144,8 @@ console.log("Current Program Offerings: " + programs);
 // Declare a new array named 'orders' and store the food and numbers arrays in it. Log the orders array.
 
 
-
+let orders = [food, numbers]
+console.log("Orders: " + orders)
 
 
 
@@ -150,7 +167,15 @@ console.log("Movies now has: " + movies)
 // **** Challenge 5 : Part 1 **** 
 // Add 2 more food items and numbers using .push() to the food and numbers arrays respectively. Log both arrays before and after adding new values.
 
+console.log("Current food: " + food)
+food.push("jelly")
+food.push("bagels")
+console.log("New food: " + food)
 
+console.log("Current numbers: " + numbers)
+numbers.push(12)
+numbers.push(14)
+console.log("New numbers: " + numbers)
 
 
 
@@ -159,14 +184,15 @@ console.log("Movies now has: " + movies)
 let cities = ["New York", "Oakland", "Las Vegas", "Topeka"]
 console.log("Cities: " + cities)
 let removedCity = cities.pop()
-console.log("Removed City: " + unwantedCity)
+console.log("Removed City: " + removedCity)
 
 
 // **** Challenge 5 : Part 2 **** 
 // Remove your last food item using .pop() and log the removed element.
 
 
-
+let removedfood = food.pop()
+console.log("Removed food: " + removedfood)
 
 
 //Note: There are more methods to remove and modify array elements. If you're curious, check out the reference on the course website.
@@ -185,7 +211,8 @@ console.log(`There are ${numCities} ciites in my array`)
 // **** Challenge 6 : Part 1 **** 
 // Print out the number of food items using string literals.
 
-
+let numfood = food.length
+console.log(`I have ${numfood} food in my array`)
 
 
 // Example: The length property is key, especially in conditionals or to simply count how many times to do something.
@@ -198,8 +225,12 @@ if(numbers.length > 3){
 // **** Challenge 6 : Part 2 **** 
 // Write an if/else statement to check the size of your food array. If you have 5 of less, add two more food items.
 
-
-
+if(food.length >= 5){
+    food.push("cookies")
+    food.push("chips")
+} else{
+    console.log("I need more food in my array!")
+}
 
 
 
@@ -224,7 +255,8 @@ console.log("letter by letter: " + wordSplitArray)
 // **** Challenge 7 : Part 1 **** 
 // Change the name of the person who is late in this sentence and log it.
 let whosLate = "I heard Alex was late to class today."
-
+let whosLatetoArray = whosLate.split(names[3]);
+console.log(`I heard ${names} was late to class today`);
 
 
 
@@ -232,8 +264,9 @@ let whosLate = "I heard Alex was late to class today."
 // **** Challenge 7 : Part 2 **** 
 // Add an exclamation mark to this sentence using split() and push(), then log.
 let makeMeExciting = "What a wonderful day"
-
-
+let exclamation = makeMeExciting.split(" ")
+exclamation.push("!");
+console.log(exclamation);
 
 
 
@@ -245,4 +278,5 @@ console.log('Back in one string: ' + rejoined)
 // Join one of your arrays together and print out the returned
 
 
-
+let joined = exclamation.join(" ")
+console.log(`Returned to one string: ` + joined)

@@ -21,29 +21,75 @@ const READLINE = require("readline-sync");
 // **** Challenge 1: Problem 1 ****
 // Write a function called printMessage() that prints any message you want.
 
+function printMessage(){
+	consule.log("type any message you would like");
+}
+
+printMessage();
 
 // **** Challenge 1: Problem 2 ****
 // Write a function called printFiveMessages() that calls printMessage() five times.
 
+function printFiveMessages(){
+	printMessage();
+	printMessage();
+	printMessage();
+	printMessage();
+	printMessage();
+}
+
+printFiveMessages();
 
 // **** Challenge 1: Problem 3 ****
 // Write a function called getUserInput() that asks the user if they'd like to print your message
 // once or five times. Then call one of the two functions above based on what the user decides.
 
 
+let num = READLINE.question("how many times do you want to print you message 1 or 5 times")
+
+function getUserInput(num){
+	if(num == 1){
+		printMessages()
+	} else{
+		printMessages()
+		printMessages()
+		printMessages()
+		printMessages()
+		printMessages()
+	}
+}
+
+getUserInput();
+
 // **** Challenge 1: Problem 4 ****
 // Write a function called printGreeting() that prints a greeting message to the user.
 
+function printGreeting(){
+	consule.log("Hello there, I hope your having a good day");
+}
+
+printGreeting();
 
 // **** Challenge 1: Problem 5 ****
 // Write a function called printClosing() that prints a goodbye message to the user.
 
+function printClosing(){
+	consule.log("Goodbye, have a nice day");
+}
+
+printClosing();
 
 // **** Challenge 1: Problem 6 ****
 // Write a function called run() that greets the user, asks them for input, and sends a goodbye message.
 // Remember! Use the functions that you've already made. Don't hardcode anything!
 
+function run(){
+	printGreeting();
+	getUserInput();
+	printClosing();
+}
 
+run();
 
 /* -------------------------------------------- 
 
@@ -66,11 +112,15 @@ However, if the two values are the same, the funciton will return double their s
 
 -------------------------------------------- */
 
+function sumDouble(num1, num2){
+	if (num1 != num2)
+	console.log(num1 + num);
 
+	else if(num1 == num2)
+	console.log((num1*2) && (num2*2))
+}
 
-
-
-
+sumDouble();
 
 // Make sure to test your code! Write a few function calls to make sure your code works!
 
@@ -87,7 +137,17 @@ Write a function called makes10 that takes two numbers, a and b, and returns tru
 
 -------------------------------------------- */
 
+function makes10(numA, numB){
+	if ((numA == 10) || (numB == 10))
+	console.log("True");
 
+	else if( numA + numB == 10)
+	console.log("True");
+
+	else {
+		console.log("False")
+	}
+}
 
 
 

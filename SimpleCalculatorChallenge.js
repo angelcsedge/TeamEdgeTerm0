@@ -29,17 +29,25 @@ Part 1:
 
 // Write a function called addNumbers that will take two numbers and return the sum.
 
+function addNumbers(num1, num2){
+let product = num1 + num2;
+	console.log('${num1} + ${num2} is ${product}');
+}
 
-
-
+addNumbers(4, 9);
 
 
 
 // Write a function called subNumbers that will take two numbers and return the difference.
 
-
-
-
+function subNumbers(num1, num2){
+	let product = num1 - num2;
+		console.log('${num1} - ${num2} is ${product}');
+	}
+	
+	subNumbers(10, 5);
+	
+	
 
 /*------------*/
 // Testing Code - Uncomment the code below to test your code!
@@ -68,14 +76,27 @@ Part 2:
 
 // Write a function called multiplyNumbers that will take two numbers and return the product.
 
-
+function multiplyNumbers(num1, num2){
+	let product = num1 * num2;
+		console.log('${num1} * ${num2} is ${product}');
+	}
+	
+	multiplyNumbers(3, 6);
+	
+	
 
 
 
 
 // Write a function called divideNumbers that will take two numbers and return the quotent.
 
-
+function divideNumbers(num1, num2){
+	let product = num1 / num2;
+		console.log('${num1} / ${num2} is ${product}');
+	}
+	
+	divideNumbers(3, 6);
+	
 
 
 
@@ -101,13 +122,37 @@ Part 3:
 Write a function that will prompt the user for the operation they want to call and the values they are inputting.
 
   -------------------------------------------- */
+function UserInput(){
+  let Input = READLINE.question("what operation do you want addition, subtraction, multiplication, or division?")
+
+if (input == "addition"){
+	let addinput1 = READLINE.question("what is your first number?");
+	let addinput2 = READLINE.question("what is your second number?");
+	return addNumbers((parselnt (addinput1), parselnt (addinput2)));
+}
+
+else if ( input == "subtraction"){
+	let subinput1 = READLINE.question("what is your first number?");
+	let subinput2 = READLINE.question("what is your second number?");
+	return subNumbers((parselnt (subinput1), parselnt (subinput2)));
+}
+
+else if (input == "multiplication"){
+	let multiplyinput1 = READLINE.question("what is your first number?");
+	let multiplyinput2 = READLINE.question("what is your second number?");
+	return multiplyNumbers((parselnt (multiplyinput1), parselnt (multiplyinput2)));
+}
+
+else if (input == "division"){
+	let divideinput1 = READLINE.question("what is your first number?");
+	let divideinput2 = READLINE.question("what is your second number?");
+	return divideNumbers((parselnt (divideinput1), parselnt (divideinput2)));
+	}
+}
 
 
-
-
-
-
-
+output= UserInput()
+	consule.log(output)
 
 
 
@@ -141,8 +186,17 @@ Don't forget to:
   
   -------------------------------------------- */
 
+function moneySpent(){
+	let spent1 = READLINE.question("how much money did you have?")
+	let spent2 = READLINE.question("how much money do you have left?")
+	return subNumbers(parseFloat (spent1), parseFloat (spent2));
+
+}
 
 
+
+spentMoney= moneySpent()
+	consule.log(spentMoney)
 
 
 

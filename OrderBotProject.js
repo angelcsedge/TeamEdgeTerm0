@@ -40,6 +40,36 @@ Remember! Functions are meant to be reusable, so write a function that will work
 
 -------------------------------------------- */
 
+let customer1 = READLINE.question("Input your Name: ");
+
+let customer2 = READLINE.question("Input your accociate's Name: ");
+
+let customer3 = READLINE.question("Input your other accociate's Name: ");
+	
+
+let customer1Food;
+let customer1Beverage;
+let customer2Food;
+let customer2Beverage;
+let customer3Food;
+let customer3Beverage;
+
+function recieveOrder(customer, item){
+	price = parseInt(READLINE.question(` Insert the cost of ${customer} ${item}: `));
+	return price;
+}
+ 
+
+customer1Food = recieveOrder(customer1, 'Food');
+customer1Beverage = recieveOrder(customer1, 'Beverage');
+customer2Food = recieveOrder(customer2, 'Food');
+customer2Beverage = recieveOrder(customer2, 'Beverage');
+customer3Food = recieveOrder(customer3, 'Food');
+customer3Beverage = recieveOrder(customer3, 'Beverage');
+
+console.log(customer1Food, customer1Beverage, customer2Food, customer2Beverage, customer3Food, customer3Beverage);
+
+
 
 
 
@@ -65,7 +95,24 @@ Remember! Functions are meant to be reusable, so write a function that will work
 
 -------------------------------------------- */
 
-
+function calculateCosts(food, beverage){
+	usertip = READLINE.question('how much would you like to tip? 10%? 20%? 30%');
+	meal = food + beverage;
+	tax = meal * 10.25;
+	totalwtax = meal + tax;
+	let tip = 0
+	if(usertip = '10%'){
+		tip = totalwtax * .10;
+	}
+	else if(usertip = '20%'){
+		tip = totalwtax * .20;
+	}
+	else if(usertip = '30%'){
+		tip = totalwtax * .30;
+	}
+	total = totalwtax + tip;
+	return total;
+}
 
 
 
@@ -91,9 +138,18 @@ Remember! Functions are meant to be reusable, so write a function that will work
 
 -------------------------------------------- */
 
+function giveReceipt(customer, food, beverage, total){
+	console.log(`${customer}`)
+		Food: (`${food}`)
+		Beverage: (`${beverage}`)
+		+ tax & tip
+		Total: (`${total}`);
+}
 
 
-
+giveReceipt(customer1, customer1Food, customer1Beverage, customer1total);
+giveReceipt(customer2, customer2Food, customer2Beverage, customer2total);
+giveReceipt(customer3, customer3Food, customer3Beverage, customer3total);
 
 
 
@@ -113,3 +169,12 @@ How many of these upchallenges can you implement?
 - Implement a rewards system (stamp cards, buy one get one, etc)
 
 -------------------------------------------- */
+
+if (giveReceipt >= 20);{
+	console.log("You earned a Buy one get One free on you next meal!");
+
+}
+ if (giveReceipt < 20);{
+	consule.log("Have a Nice Day");
+}
+
