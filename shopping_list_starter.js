@@ -35,8 +35,11 @@ console.log(welcomeMessage)
 
 //-->Todo: declare a shoppingList array
 
+let shoppingList = ["bread", "milk", "eggs", "jelly", "water", "ham", "apples"]
 
 while(active){
+    //let reply = promptUser()
+    //console.log(reply)
 
     checkAnswer(promptUser()) //this makes the program continously prompt and check response while the boolean 'active' returns true
 
@@ -44,23 +47,40 @@ while(active){
 
 function promptUser(){
 
-    let  reply = READLINE.question("What do you want to add or remove?  >>  ")
+    reply = READLINE.question("What do you want to add or remove?  >>  ")
 
     return reply
 
 }
 
-function checkAnswer(){
+function checkAnswer(reply){
+    //console.log(reply);
+    let userReply = reply.split(" ")
+    
+    
+    if((userReply[0]) === "add"){
+        //addItem();
+        addItem(reply);
+    } else if ((userReply[0]) === "remove"){
+        removeItem();
+    }
 
+}
+function addItem(reply){
+    shoppingList.push(reply);
+    console.log(reply)
+    console.log("addItem");
+    console.log(shoppingList)
+   
+    
+    //this function can take in a string and store it in an array
 
 }
 
-function addItem(){
-//this function can take in a string and store it in an array
-
-}
-
-function removeItem(){
-
-
+function removeItem(reply){
+    shoppingList.indexOf(reply)
+    console.log(reply)
+    console.log("removeItem");
+    console.log(shoppingList)
+    
 }
