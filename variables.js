@@ -22,10 +22,6 @@ let name = "Angel";
 let grade = "11";
 let funFact = "I own 10 birds";
 
-console.log(`Hi! My name is ${name}`);
-console.log(`I'm in the ${grade}th grade.`);
-console.log(`A fun fact about me is that ${funFact}`);
-
 
 // **** Challenge 1: Problem 1 ****
 // Declare and initalize the variables with your response for the three statements above! 
@@ -38,11 +34,13 @@ console.log(`A fun fact about me is that ${funFact}`);
 console.log('string');
 
 
+
 // **** Challenge 1: Problem 2 ****
 // Create a string for the different lines of the Happy Birthday Song
 // Print out the song using the stings you declared.
 
 let song = "Happy Birthday to You, Happy Birthday to You, Happy Birthday Dear Chris, Happy Birthday to You.";
+
 
 consule.log(song)
 
@@ -73,12 +71,14 @@ let num2 = 10;
 let sum1 = num1 + num2;
 consule.log(sum1);
 
+
 // **** Challenge 2: Problem 2 ****
 // Store the difference between sum (above) and 7 in a variable.
 // Print the difference.
 
 let sum2 = sum1 - 7;
 consule.log(sum2);
+
 
 // **** Challenge 2: Problem 3 ****
 // Store the product of the difference and 3 in a variable.
@@ -87,12 +87,14 @@ consule.log(sum2);
 let sum3 = sum2 + 3;
 consule.log(sum3);
 
+
 // **** Challenge 2: Problem 4 ****
 // Store the power of the product squared in a variable.
 // Print the power.
 
 let sum4 = sqrt(sum3);
 consule.log(sum4);
+
 
 // **** Challenge 2: Problem 5 ****
 // Store the quotient of the power divided by 4 in a variable.
@@ -101,12 +103,14 @@ consule.log(sum4);
 let sum5 = sum3/4;
 consule.log(sum5);
 
+
 // **** Challenge 2: Problem 6 ****
 // Store the remainder of the quotient divided by 2 in a variable.
 // Print the remainder.
 
 let sum6 = sum5/2;
 consule.log(sum6);
+
 
 // **** Upchallenge! ****
 // Given a variable that stores a number, print the values that come right before and right after.

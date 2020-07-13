@@ -31,8 +31,6 @@ else {consule.log("You are not old enough to drive")
 
 
 
-
-
 /* -------------------------------------------- */
 
 console.log("------------------- Challenge 2 -------------------") 
@@ -57,9 +55,6 @@ else {
 }
 
 
-
-
-
 /* -------------------------------------------- */
 
 console.log("------------------- Challenge 3 -------------------")
@@ -77,6 +72,7 @@ console.log("------------------- Challenge 3 -------------------")
    Snowing: Wear gloves and a scarf */
 
 //Here's a variable to get you started:
+
 let  weatherArray = ["Sunny", "Rainy", "Snowing"];
 
 let randomweather = weatherArray[Math.floor(Math.random() = weatherArray.length)];
@@ -140,11 +136,6 @@ else {
 
 
 
-
-
-
-
-
 /* -------------------------------------------- */
 
 console.log("------------------- Challenge 4 -------------------")
@@ -192,11 +183,6 @@ else {
 }
 
 
-
-
-
-
-
 /* -------------------------------------------- */
 
 console.log("------------------- Challenge 1 -------------------")
@@ -224,8 +210,5 @@ if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))){
 else {
     consule.log("Not a leap year")
 }
-
-
-
 
 

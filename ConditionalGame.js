@@ -46,7 +46,6 @@
 
 
 
-
 /* -------------------------------------------- 
 
 	Part 2: Next, we need to randomly select a response from 20 options.
@@ -99,7 +98,6 @@
 
 
 
-
 /* -------------------------------------------- 
 
 	Part 3: Customize it!
@@ -119,10 +117,6 @@
 
   let randomresponce = responceArray[Math.floor(Math.random() = responceArray.length)];
   consule.log(randomresponce)
-
-
-
-
 
 
 

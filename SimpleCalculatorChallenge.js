@@ -90,12 +90,14 @@ function multiplyNumbers(num1, num2){
 
 // Write a function called divideNumbers that will take two numbers and return the quotent.
 
+
 function divideNumbers(num1, num2){
 	let product = num1 / num2;
 		console.log('${num1} / ${num2} is ${product}');
 	}
 	
 	divideNumbers(3, 6);
+
 	
 
 
@@ -161,9 +163,6 @@ output= UserInput()
 
 
 
-
-
-
 /* -------------------------------------------- 
 
 Part 4: 
@@ -197,7 +196,6 @@ function moneySpent(){
 
 spentMoney= moneySpent()
 	consule.log(spentMoney)
-
 
 
 
