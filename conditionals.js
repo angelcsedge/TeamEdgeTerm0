@@ -16,16 +16,6 @@ console.log("------------------- Challenge 1 -------------------")
     Prompt the user to enter their age.
     Write conditional statements that print out whether you can drive in your city. */
 
-let msg = "";
-msg = READLINE.question("age?")
-consule.log("my age is"+msg)
-
-if (msg >= 16){
-consule.log("you can drive")}
-
-else {consule.log("You are not old enough to drive")
-}
-
 
 
 
@@ -43,22 +33,6 @@ console.log("------------------- Challenge 2 -------------------")
 /* Who placed first?
     Write conditional statements that checks which is the highest and prints the highest score. 
     Hint: Create three variables and assign them random scores. */
-
-let num1 = 10;
-let num2 = 18;
-let num3 = 6;
-
-if ((num1 > num2) && (num1 > num3)){
-    consule.log("Player 1 Wins");
-}
-
-else if (num2 > num3){
-    consule.log("Player 2 Wins");
-}
-else {
-    console.log("Player 3 Wins");
-}
-
 
 
 
@@ -85,27 +59,6 @@ console.log("------------------- Challenge 3 -------------------")
 
 //Here's a variable to get you started:
 
-let  weatherArray = ["Sunny", "Rainy", "Snowing"];
-
-let randomweather = weatherArray[Math.floor(Math.random() = weatherArray.length)];
-consule.log(randomweather)
-
-if ((randomweather = "Sunny")){
-    consule.log("Wear a hat and sunglasses")
-}
-
-else if (randomweather = "Rainy"){
-    consule.log("Bring and Umbrella")
-}
-
-else (randomweather = "Snowing"){
-    consule.log("Wear gloves and a scarf")
-}
-
-
-
-
-
 
 
 
@@ -126,30 +79,6 @@ else (randomweather = "Snowing"){
    Hint: You will need another variable to keep track of the temperature.
 */
 
-let  weatherArray = ["Sunny", "Rainy", "Snowing"];
-
-let randomweather = weatherArray[Math.floor(Math.random() = weatherArray.length)];
-consule.log(randomweather)
-
-let temperatureArray = ["30", "90","60"];
-
-let randomtemperature = temperatureArray[Math.floor(Math.random() = temperatureArray.length)];
-consule.log(randomtemperature)
-
-if ((randomweather = "Sunny") && (randomtemperature = "90")){
-    consule.log("Wear a hat and sunglasses")
-}
-
-else if ((randomweather = "Rainy") && (randomtemperature = "60")){
-    consule.log("Bring and Umbrella")
-}
-
-else {
-    consule.log("Wear gloves and a scarf")
-
-
-
-
 
 
 
@@ -163,42 +92,6 @@ console.log("------------------- Challenge 4 -------------------")
     Write a set of conditionals that will take a number from 1 to 7 
     and print out the corresponding day of the week. 
     Make sure to add a statement that accounts of any numbers out of range! */
-
-let day1 = 1;
-let day2 = 2;
-let day3 = 3;
-let day4 = 4;
-let day5 = 5;
-let day6 = 6;
-let day7 = 7;
-
-if (msg == day1){
-    consule.log("Monday")
-}
-else if (msg == day2){
-    consule.log("Tuesday")
-}
-else if (msg == day3){
-    consule.log("Wendsday")
-}
-else if (msg == day4){
-    consule.log("Thursday")
-}
-else if (msg == day5){
-    consule.log("Friday")
-}
-else if (msg == day6){
-    consule.log("Saturday")
-}
-else if (msg == day7){
-    consule.log("Sunday")
-}
-else {
-    consule.log("There are only 7 days in a week")
-}
-
-
-
 
 
 
@@ -222,16 +115,6 @@ console.log("------------------- Challenge 1 -------------------")
 
   Your challenge is to translate the steps above into conditionals which will evaluate if the 
   year stored in a variable is/was a leap year.*/
-
-let year = 2019;
-
-if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)){
-    consule.log( year + "is a leap year")
-}
-else {
-    consule.log("Not a leap year")
-}
-
 
 
 
