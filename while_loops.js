@@ -34,76 +34,90 @@ ww      ww hhhhhh  iii lll ee   e    lll oo  oo oo  oo ppp  pp s
 console.log("------------------- CHALLENGE 1 : IN YOUR PRIME -------------------")
 
  //Here is a humble while loop in action. We need a variable to hold the counter value.
-let num = 0
-while(num <= 10){
+// let num = 0
+// while(num <= 10){
 
-console.log("example counter--> " + num)
-num++
-}
-//-->TODO: Declare a while loop that prints all the prime numbers between 0 and 1000
+// console.log("example counter--> " + num)
+// num++
+// }
+// //-->TODO: Declare a while loop that prints all the prime numbers between 0 and 1000
 
+// let number = 1
+// while(number <= 1000){
 
+// console.log("Numbers are: " + number)
+// number++
+// }
 
-console.log("------------------- CHALLENGE 2 : FOUND   -------------------")
+// console.log("------------------- CHALLENGE 2 : FOUND   -------------------")
 
-//here is an array full of items
-let items = ["pencil" , "eraser" , "mirror" , "comb" , "spoon" , "key" , "earrings" ,"cat food" , "magazine"]
+// //here is an array full of items
+// let items = ["pencil" , "eraser" , "mirror" , "comb" , "spoon" , "key" , "earrings" ,"cat food" , "magazine"]
 
-//-->TODO: Use a while loop to search the contents of an array for the key! If it exists, print "found the key!"
+// //-->TODO: Use a while loop to search the contents of an array for the key! If it exists, print "found the key!"
 
+// let i = 0
+// while("key" != items[i]){
+//     i++
+// }
+// console.log("Found the key!" + i)
 
-
-
-
-console.log("------------------- CHALLENGE 3 : BUGGIN   -------------------")
+// console.log("------------------- CHALLENGE 3 : BUGGIN   -------------------")
 
 //Oh no! these functions have loops that don't do what they say they should do. Can you fix that?
 //One more thing...to stop an infite loop you hit Control + C in the terminal  
 
 //-->TODO: Make me count  2, 4, 6,..., 50
 
-function evenNumbersToFifty(){
+// function evenNumbersToFifty(){
 
-    let num = 50
-    while(num <50){
+//     let num = 2
+//     while(num <= 50){
+//         console.log("number: " + num)
+//         num = num + 2
 
-        console.log("number: " + num)
-
-    }
-}
-evenNumbersToFifty()
-
-//-->TODO: Make this design  below
-//
-//          [ 0 ]
-//          [ 0, 1 ]
-//          [ 0, 1, 2 ]
-//          [ 0, 1, 2, 3 ]
-//          [ 0, 1, 2, 3, 4 ]
-//          [ 0, 1, 2, 3, 4, 5 ]
-//          [ 0, 1, 2, 3, 4 ]
-//          [ 0, 1, 2, 3 ]
-//          [ 0, 1, 2 ]
-//          [ 0, 1 ]
-//          [ 0 ]
-
-
-
-function pattern(){
-
-    let index = 0 
-    let array =[]
+        
     
-    while(index <= 5 ){
+//     }
+// }
+// evenNumbersToFifty()
+
+// // //-->TODO: Make this design  below
+// // //
+// // //          [ 0 ]
+// // //          [ 0, 1 ]
+// // //          [ 0, 1, 2 ]
+// // //          [ 0, 1, 2, 3 ]
+// // //          [ 0, 1, 2, 3, 4 ]
+// // //          [ 0, 1, 2, 3, 4, 5 ]
+// // //          [ 0, 1, 2, 3, 4 ]
+// // //          [ 0, 1, 2, 3 ]
+// // //          [ 0, 1, 2 ]
+// // //          [ 0, 1 ]
+// // //          [ 0 ]
+
+
+
+// function pattern(){
+
+//     let index = 0 
+//     let array =[]
+    
+//     while(index <= 5 ){
       
-        array.push(index)
+//         array.push(index)
     
-       // console.log(array)
-        index++
-    }
+//         console.log(array)
+//         index++
+//     }
+//     while(array.length > 1){
+//         array.pop()
+//         console.log(array)
+//     }
 
-}
-pattern()
+
+// }
+// pattern()
 
 
 console.log("------------------- CHALLENGE 4 : MATH QUIZ   -------------------")
@@ -114,31 +128,36 @@ console.log("------------------- CHALLENGE 4 : MATH QUIZ   -------------------")
 //         The user enters the answer. If wrong, keep prompting. If correct, say congrats!!
 //         Use this handy boolean to get you started! You will need readline_sync!
 
+let randomNumber = Math.floor(Math.random()* 101)
+let randomNumber2 = Math.floor(Math.random()* 101)
+
+console.log()
+
 let isCorrect = false
 
 
-console.log("------------------- CHALLENGE 5 : WHAT AM I?   -------------------")
+// console.log("------------------- CHALLENGE 5 : WHAT AM I?   -------------------")
 
-//-->TODO: Write a game loop that prompts that never stops asking, "Iknow you are a _____, but what am I?"
-//         You are given to starter functions and a loop to get started! 
-//         Notice how one function calls the other and uses the returned value as the input. This is called Recursion! 
+// //-->TODO: Write a game loop that prompts that never stops asking, "Iknow you are a _____, but what am I?"
+// //         You are given to starter functions and a loop to get started! 
+// //         Notice how one function calls the other and uses the returned value as the input. This is called Recursion! 
 
-let keepAsking = false
-while(keepAsking){
+// let keepAsking = false
+// while(keepAsking){
 
- //response(promptUser())
-}
+//  //response(promptUser())
+// }
 
-function promptUser(){
-
-  
-
-}
-
-function response(response){
+// function promptUser(){
 
   
 
-}
+// }
 
-//-->TODO: Challenge! write a secret word to break out of the loop!
+// function response(response){
+
+  
+
+// }
+
+// //-->TODO: Challenge! write a secret word to break out of the loop!

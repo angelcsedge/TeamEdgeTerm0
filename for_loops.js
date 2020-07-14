@@ -29,6 +29,11 @@ for(let i = 0 ; i <=10 ; i++) {
 
 //-->TODO: Write a loop that prints a happy birthday message for every year you have been alive.
 
+for(let age = 0 ; age <=16 ; age++) {
+
+    console.log("Happy Birthday " + age)
+
+}
 
 
 console.log("------------------- CHALLENGE 2 : ITERATOR ----------------------")
@@ -43,10 +48,14 @@ for(let i = 0 ; i< colors.length; i ++) {
 }
 
 //-->TODO: Declare an array with at least 10 animals. You provide the animals.
-let animals = []
+let animals = ["human ", "gorilla", "monkey", "kangaroo", "lion", "tiger", " panther", "dog", "panda", "chicken"]
 
 //-->TODO: Log all the animals in the array with a for loop. 
 
+for(let beast = 0 ; beast< beast.length; beast ++) {
+
+    console.log("The animal is: " + animals[beast])
+}
 
 console.log("------------------- CHALLENGE 3 : DEBUG -------------------------")
 
@@ -59,7 +68,7 @@ for(let i = 0 ; i<= colors.length; i ++) {
 //-->TODO: fix this code! What could be wrong? It should print out the 5 times tables all the way to 12.
 
 console.log("Behold...the 5 times table: ")
-for(let i = 0 ; i > 12;  i++) {
+for(let i = 0 ; i <= 12;  i++) {
 
     console.log(` 5 x ${i} =  ` + i*5 )
      
