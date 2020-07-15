@@ -31,6 +31,8 @@ let object = {
 
         this.isEmpty =true
     }
+
+
 }
 //working with the object:
 object.length = 12
@@ -47,9 +49,25 @@ console.log(object)
 
 //*********************************  MY OBJECT *************************** */
 
+let Tree = {
+    Type: "Pine",
+    SizeinFeet: 20,
+    LeafAmount: 10000,
+    isGrowing: true,
+    isNew: false,
+    isHealthy: true,
+    usess: [ "shade", "shelter", "oxygen", "food"],
 
+    natureFact(){
+        console.log("You learned fact about a tree")
+    },
 
+    stopGrowing(){
+        this.isGrowing= false
+    }
 
+}
+console.log(Tree)
 
 
 //************************************************************************* */
@@ -60,19 +78,31 @@ console.log("------------------- CHALLENGE 2 : MODIFY   -------------------")
 
 //-->TODO: Log your object you created above
 
+console.log(Tree)
 
 //-->TODO: Update the object you just created  by adding new properties and values, including array elements, in this section.
 
 
-//-->TODO: Log your object again and observe changes
+Tree.color = "green"
+console.log(Tree.color)
+Tree.ageinYears = 20
+console.log(Tree.ageinYears)
+Tree.
 
+//-->TODO: Log your object again and observe changes
+ console.log(Tree)
 
 console.log("------------------- CHALLENGE 3 : METHOD   -------------------")
 
 //-->TODO: Add at least two methods (object functions) to your object defined in Challenge 1 and invoke them here.
 //          Make your methods update your variables, or add a random number to an array, etc.
 
+console.log(Tree.isGrowing)
+Tree.stopGrowing()
+console.log(Tree.isGrowing)
 
 console.log("------------------- CHALLENGE 4 : LITERALLY   -------------------")
 
 //-->TODO: Put it all together using a string literal to tell the story of your object!
+
+console.log(`I have a Tree in the backyard that is `)
