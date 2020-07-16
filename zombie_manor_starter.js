@@ -179,3 +179,9 @@ function checkAnswer(input){
 }
 
 start()
+
+
+
+else if{
+    console.log("Sorry, I don't know what that means.")
+    }
