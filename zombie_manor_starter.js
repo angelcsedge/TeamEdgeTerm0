@@ -182,6 +182,53 @@ start()
 
 
 
-else if{
-    console.log("Sorry, I don't know what that means.")
+else if(inputMsg.includes("go")){
+    let msgArray  = inputMsg.split(" ")
+        let newRoom = msgArray[1]
+
+         console.log("you typed go to "  +  newRoom)
+
+      if(currentRoom.paths.includes(newRoom)){
+
+            console.log("Yes you may enter there")
+
+         for (room of rooms){
+             if(room.name.toLowerCase() == newRoom.toLowerCase()){
+
+            let index = rooms.indexOf(room)
+
+            currentRoom = rooms[index]
+            console.log("You are now at the : " + currentRoom.name);
+            
+        }
     }
+} else {
+    console.log("No you can't go there")
+ }
+
+ if(command.includes("go")){
+
+    let msgArray  = inputMsg.split(" ") 
+    let newRoom = inputMsg;
+
+
+    console.log("tyring to go to: " + newRoom)
+
+     if(currentRoom.paths.includes(newRoom)){
+
+        console.log("Current room includes the room : " + newRoom)
+        
+
+    } else if(inputMsg.includes("look")){
+        console.log("You see the following: ") 
+
+        for(object of currentRoom.objects){
+         console.log(" -  " + object)
+        }
+
+        console.log("From here you can go to: ")
+
+        for(path of currentRoom.paths){
+            console.log(" - " + path)
+
+        }

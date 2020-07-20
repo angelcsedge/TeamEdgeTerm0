@@ -1,202 +1,382 @@
-const READLINE = require("readline-sync")
-let gameIsOn = true
-let inputMsg =""
-let currentRoom = null 
+const READLINE = require("readline-sync");
+ 
+
+let inputMsg ="" 
+let gameIsOn = true 
+let currentRoom = null
 let rooms = []
 
 
- 
-function start(){
-   console.log("what is you name Player");
-   let name = READLINE.question("What is your name, player? ")
-   console.log("Welcome, " + name + `\n` + "You are an adventerer who is about to go on a important Journey, but first you must find all of your supplies. Find what you need in order to leave and begin you great Journey!");
- 
-   currentRoom = Bedroom
 
-   console.log(`You are in your: ${currentRoom.name}. and you can't wait for your adventure.`)
+  class Room {
 
-   while(gameIsOn){
-       checkAnswer(promptUser())
-   }
+    constructor(name, description, objects, paths, visited, key) {
+        this.name = name;
+        this.description = description;
+        this.objects = objects;
+        this.visited = visited
+        this.paths = paths;
+        this.key = key;
+
+    }
+
 }
+       
+        class Item {
 
-class Room {
+            constructor(name, type, description,  location, specialPower ){
+      
+               this.name = name
+               this.type = type
+               this.location = location
+               this.description = description
+               this.specialPower = specialPower
+               
+                
+              
+            }
+          }
+        
+    
+    class Player {
+        constructor(name, items){
+            this.name =name
+            this.items = items
+        }
+      }
 
-    constructor(name, description, objects, paths,locked,unlocked) {
-       this.name = name;
-       this.description = description;
-       this.objects = objects;
-       this.paths = paths;
-       this.locked = locked;
-       this.unlocked = unlocked;
-     }
- }
-
- class Player {
-   constructor(name, items){
-       this.name =name
-       this.items = items
-   }
- }
-
- let player = new Player()
+  let player = new Player()
   player.name = null
   player.items = []
-
-
-  let kitchen = new Room()
+  
+let kitchen = new Room()
    kitchen.name = "Kitchen"
    kitchen.description = "The kitchen is a little dusty from your time spent away on your other adventures. It seems you may have to clean up when you get back."
    kitchen.objects =["match", "sandwich", "water"]
    kitchen.paths=["Entry Hall" , "Trophy room" ]
-   islocked = false
-   isunlocked = true
+   kitchen.visited = false
+   kitchen.key = null
 
    let Trophyroom = new Room()
    Trophyroom.name= "Trophy room"
    Trophyroom.description ="You are in your Trophy room. You see all the various items and treasures that you have proquered in you travels. "
    Trophyroom.objects = ["sword" , "candle"]
    Trophyroom.paths =["Kitchen"]
-   islocked = false
-   isunlocked = true
+   Trophyroom.visited = false
+   Trophyroom.key = null
 
    let Entryhall = new Room()
    Entryhall.name= "Entry Hall"
    Entryhall.description ="The hall is quite large and welcoming for those who enter, but you can't wait for what lies beyond the door. "
    Entryhall.objects = []
    Entryhall.paths =["Kitchen", "Library", "Bedroom"]
-   islocked = false
-   isunlocked = true
+   Entryhall.visited = false
+   Entryhall.key = null
 
    let Library = new Room()
    Library.name= "Library"
    Library.description ="Your have collected thousands of books, from various merchents, and now you have quite the collection of knowledge."
-   Library.objects = ["key" , "map"]
+   Library.objects = ["map"]
    Library.paths =["Entry Hall", "Living room"]
-   islocked = false
-   isunlocked = true
+   Library.visited = false
+   Library.key = null
 
    let Livingroom = new Room()
    Livingroom.name= "Living room"
    Livingroom.description ="This room was specifically made so that you can enjoy relexation from when you require a break from adventures. "
    Livingroom.objects = ["Journal"]
    Livingroom.paths =["Kitchen"]
-   islocked = false
-   isunlocked = true
+   Livingroom.visited = false
+   Livingroom.key = null
 
    let Bedroom = new Room()
    Bedroom.name= "Bedroom"
    Bedroom.description ="Your room is very bare and simple, after all you don't sleep at home much "
    Bedroom.objects = []
    Bedroom.paths =["Entry Hall", "Attic", "Treasure room"]
-   islocked = false
-   isunlocked = true
+   Bedroom.visited = false
+   Bedroom.key = null
 
    let Treasureroom = new Room()
    Treasureroom.name= "Treasure room"
    Treasureroom.description ="The room is scattered with many valuable items and wealth from all your travels. "
    Treasureroom.objects = ["pouch of gold"]
    Treasureroom.paths =["Bedroom"]
-   islocked = true
-   isunlocked = false
+   Treasureroom.visited = false
+   Treasureroom.key = null
 
    let Attic = new Room()
    Attic.name= "Attic"
    Attic.description ="You have stored a lot of junk that was in the way and you feel very weird when you are in the space. "
-   Attic.objects = ["armour", "key to Treasure room"]
+   Attic.objects = ["armour"]
    Attic.paths =["Bedroom"]
-   islocked = false
-   isunlocked = true
+   Attic.visited = false
+   Attic.key = "Treasure key"
 
+   let Outside = new Room()
+   Outside.name= "Outside"
+   Outside.description ="You have stored a lot of junk that was in the way and you feel very weird when you are in the space. "
+   Outside.objects = []
+   Outside.paths =["Entry Hall"]
+   Outside.visited = false
+   Outside.key = "key"
 
-rooms.push(kitchen, Trophyroom, Entryhall, Library, Livingroom, Bedroom, Treasureroom, Attic)
+rooms.push(kitchen, Trophyroom, Entryhall, Library, Livingroom, Bedroom, Treasureroom, Attic, Outside)
 
+let Key = new Item()
+Key.name = "key"
+Key.description = "The key is light and dusty from being with all the books"
+Key.location =  ""
+Key.type = "key"
+Key.specialPower = "open outside room"
+
+let Treasurekey = new Item()
+Treasurekey.name = "Treasure key"
+Treasurekey.description = "The key is shiny and elegent"
+Treasurekey.location = ""
+Treasurekey.type = "key"
+Treasurekey.specialPower = "open Treasure room"
+ 
+function start(){
+             
+    console.log("Welcome to ....\n");
+    console.log(`
+
+    _____  _     _____   ____  ____  _     _____ _      _____  _     ____  _____   _      ____  _      ____  _  ____  _     
+    /__ __\/ \ /|/  __/  /  _ \/  _ \/ \ |\/  __// \  /|/__ __\/ \ /\/  __\/  __/  / \__/|/  _ \/ \  /|/ ___\/ \/  _ \/ \  /|
+      / \  | |_|||  \    | / \|| | \|| | //|  \  | |\ ||  / \  | | |||  \/||  \    | |\/||| / \|| |\ |||    \| || / \|| |\ ||
+      | |  | | |||  /_   | |-||| |_/|| \// |  /_ | | \||  | |  | \_/||    /|  /_   | |  ||| |-||| | \||\___ || || \_/|| | \||
+      \_/  \_/ \|\____\  \_/ \|\____/\__/  \____\\_/  \|  \_/  \____/\_/\_\\____\  \_/  \|\_/ \|\_/  \|\____/\_/\____/\_/  \|
+                                                                                                                             
+                                                                                                                         
+
+    `)
+    let name = READLINE.question("What is your name, player? ")
+    player.name = name
+    console.log("Welcome, " + name);
+    console.log("You can type [help] to learn how to play");
+
+   
+    currentRoom = Bedroom
+
+    console.log(`You are in your: ${currentRoom.name}. and you can't wait for your adventure.`)
+
+   
+    while(gameIsOn){
+
+        checkAnswer(promptUser())
+
+    }
+}
 
 function promptUser(){
-    let  reply = READLINE.question("What do you want to do?  >>  ")
+
+   let  reply = READLINE.question(`${player.name}, what do you want to do?  >> \n `)
+
     return reply
 }
 
+
 function checkAnswer(input){
-    console.log("checking input :  " +  input)
 
-    inputMsg = input
+    //inputMsg = input;
 
-    if(inputMsg.includes("help")){
+    input = input.split(" ")
+    console.log("input : " + input)
+
+    let command = input.splice(0,1)
+
+    console.log("Input, after command : " + input)
+    inputMsg = input.join(" "); 
+
+    console.log(" input message: " + inputMsg)
+
+
+
+        if(command.includes("go")){
+
         
-        console.log("Here are some commands you can try: help, look, take, go, end")
+            let msgArray  = inputMsg.split(" ") 
+            let newRoom = inputMsg;
+
+
+            console.log("tyring to go to: " + newRoom)
+
         
-        }else if(inputMsg.includes("end")){
-        
-        gameIsOn =false
-        console.log("Thank you for playing, goodbye!")
-        
-        } 
-    
-    else if(inputMsg.includes("go")){
-        let msgArray  = inputMsg.split(" ")
-            let newRoom = msgArray[1]
+             if(currentRoom.paths.includes(newRoom)){
 
-             console.log("you typed go to"  + newRoom)
-
-          if(currentRoom.paths.includes(newRoom)){
-
-                console.log("Yes you may enter there")
-
-             for (room of rooms){
-                 if(room.name.toLowerCase() == newRoom.toLowerCase()){
-
-                let index = rooms.indexOf(room)
-
-                currentRoom = rooms[index]
-                console.log("You are now at the : " + currentRoom.name);
+                console.log("Current room includes the room : " + newRoom)
                 
-            }
-        }
-    } else {
-        console.log("No you can't go there")
-     }
 
-    } else if(inputMsg.includes("look")){
-        console.log("You see the following: ") 
+                for (room of rooms){
 
-        for(object of currentRoom.objects){
-         console.log(" -  " + object)
-        }
+                    if(room.name.toLowerCase() == newRoom.toLowerCase() ){
+                        
+                        
+                        
+                                
+                                
 
-        console.log("From here you can go to: ")
+                            }
+                            let index = rooms.indexOf(room) 
+                            currentRoom = rooms[index]
 
-        for(path of currentRoom.paths){
-            console.log(" - " + path)
+                            
+                            console.log("You are now at the : " + currentRoom.name);
+                            console.log("this room has : " + currentRoom.objects)
+                            console.log(currentRoom.description)
+                            currentRoom.visited = true
 
-        }
-    
-    } else if(inputMsg.includes("take")){
+                        }
 
-        console.log("Taking item...")
 
-        let itemsArray  = inputMsg.split(" ")
-        let itemToTake = itemsArray[1] 
+                        
+                        } 
+                         if(room.key !=null) {
 
-         if(currentRoom.objects.includes(itemToTake)){
+                            console.log("This room is locked! It looks like you need to find a special key")
 
-            console.log("Yes you can take this item: " + itemToTake)
-            player.items.push(itemToTake) 
+                            
+
+                           
             
-            let indexToRemove = currentRoom.objects.indexOf(itemToTake)
-            currentRoom.objects.splice(indexToRemove,1)
+                            if(room.key==null ||   player.objects.includes(room.key) ){
+
+                            }
+  
+                }
+
+             } else{
+
+                console.log("No, you can't go there")
+             }
+              if(command.includes("end")){
+        
+                gameIsOn =false
+                console.log("Thank you for playing, goodbye!")
+            
+        
+            } else if(command.includes("look")){
+ 
+            console.log("------ LOOK ----------\n")
+            console.log("You see the following: ") 
+
+            for(object of currentRoom.objects){
+        
+                console.log(" -  " + object)
+            }
+
+            console.log("From here you can go to: ")
+
+            for(path of currentRoom.paths){
+                console.log(" - " + path)
+
+            }
+            console.log("---------------------\n")
+
+        } else if(command.includes("take")){
+            console.log("------TAKE----------\n")
+            
+           
+            let itemToTake = inputMsg
+            
+
+            if(currentRoom.objects.includes(itemToTake)){
+
+                console.log("Yes you can take this item: " + itemToTake)
+                player.items.push(itemToTake) 
+
+                let indexToRemove = currentRoom.objects.indexOf(itemToTake)
+
+                currentRoom.objects.splice(indexToRemove, 1)
+
                 console.log("player has : " + player.items)
 
+            } else {
+                console.log("No you can't pick that up")
+
+            }
+            console.log("---------------------\n")
+
+        } else if (command.includes("room")){
+
+            console.log("-------ROOM----------\n")
+            console.log( "You are in " + currentRoom.name);
+            console.log("---------------------")
+
+        }  else if (command.includes("inventory")){
+            console.log("--------INVENTORY----------\n")
+            console.log("You have the following items: ")
+            for(item of player.items){
+
+                console.log(item)
+            }
+            console.log("---------------------")
+
+
+        } else if (command.includes("help")){
+            console.log("---------HELP-------\n")
+            console.log("Here are some commands you can type:")
+            console.log(" - 'look' to look around. \n - 'go' followed by the name of the room or area you want to walk to. \n - 'take' to add objects to your inventory. ")
+            console.log("---------------------")
+            
+             
+        } else if (command == ""){
+
+            console.log(" input: " + inputMsg)
+             
+            inputMsg = READLINE.question("What do you want to do? You can type 'help' for commands to use >>> ");
+        } else {
+
+            console.log(" I don't understand that")
+        }
+    
+
+        Key.location =  rooms[Math.floor(Math.random()*rooms.length)]; //set an random integer as the location, which is an index in the rooms array
+        while(Key.location == Outside){
          
-        
-        }else {
-            console.log("No you can't pick that up")
+           
+            Key.location =  rooms[Math.floor(Math.random()*rooms.length)]; 
         }
         
+        console.log("The key is in: " + Key.location.name)
+        
+        
+       Treasurekey.location =  rooms[Math.floor(Math.random()*rooms.length)];
+        while(Treasurekey.location == Attic){
+         
            
+            Treasurekey.location =  rooms[Math.floor(Math.random()*rooms.length)]; 
+        }
         
-     }
+        for (room in rooms) {
         
-}
-start()
+            if(Treasurekey.location == room.name){
+        
+                room.objects.push(Treasurekey.name)
+            }
+            if(Key.location == room.name){
+        
+                room.objects.push(Key.name)
+            }
+        }
+        
+        
+        
+        console.log("The Treasure key is in: " + Treasurekey.location.name)
+        
+ 
 
+ 
+
+
+
+ 
+
+
+
+
+    }
+ 
+
+start()
