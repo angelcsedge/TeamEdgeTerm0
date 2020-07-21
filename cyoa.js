@@ -213,7 +213,9 @@ function checkAnswer(input){
                     if(room.name.toLowerCase() == newRoom.toLowerCase() ){
                         
                         
-                        
+                        if(room.key !=null) {
+
+                            console.log("This room is locked! It looks like you need to find a special key")
                                 
                                 
 
@@ -232,9 +234,7 @@ function checkAnswer(input){
 
                         
                         } 
-                         if(room.key !=null) {
-
-                            console.log("This room is locked! It looks like you need to find a special key")
+                         
 
                             
 

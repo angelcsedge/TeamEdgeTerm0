@@ -114,8 +114,9 @@ function calculateCosts(food, beverage){
 	return total;
 }
 
-
-
+calculateCosts();
+calculateCosts();
+calculateCosts();
 
 
 
