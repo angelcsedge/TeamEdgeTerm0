@@ -213,9 +213,9 @@ function checkAnswer(input){
                     if(room.name.toLowerCase() == newRoom.toLowerCase() ){
                         
                         
-                        if(room.key !=null) {
+                        if(room.key==null ||   player.objects.includes(room.key) ){
 
-                            console.log("This room is locked! It looks like you need to find a special key")
+                            }
                                 
                                 
 
@@ -230,19 +230,12 @@ function checkAnswer(input){
                             currentRoom.visited = true
 
                         }
+                                if(room.key !=null) {
 
+                                console.log("This room is locked! It looks like you need to find a special key")
 
                         
-                        } 
-                         
-
-                            
-
-                           
-            
-                            if(room.key==null ||   player.objects.includes(room.key) ){
-
-                            }
+                        }
   
                 }
 
